@@ -1,0 +1,33 @@
+###LOCAL DB-MYSQL ###
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/java_board?useUnicode=true&characterEncoding=UTF-8
+    username: root
+    password: root
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+      naming:
+        strategy: org.hibernate.cfg.ImprovedNamingStrategy
+      generate-ddl: false
+    properties:
+      hibernate:
+        format_sql: true
+      enable_lazy_load_no_trans: true
+      connection:
+        characterEncoding: utf-8
+        useUnicode: true
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+
+  http:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+
+server:
+  port: 8083
